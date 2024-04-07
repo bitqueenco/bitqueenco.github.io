@@ -23,7 +23,7 @@
         background-color: #f8f9fa; /* Light gray background color */
     }
     .container {
-        max-width: 800px;
+        width: auto;
         margin: auto;
         padding: 20px;
         background-color: #fff; /* White background color */
@@ -49,6 +49,34 @@
         border-top: 1px solid #ddd; /* Light gray border color */
         margin: 20px 0;
     }
+    
+     button {
+        padding: 8px 16px;
+        background-color: #F7931A; /* Satoshi Bitcoin orange color */
+        color: #000; /* Black text color */
+        border: none;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+        white-space: normal; /* Allow text wrapping */
+        overflow: visible; /* Allow overflow text to be visible */
+        width: 100%; /* Make button width full */
+        min-width: 150px; /* Minimum button width */
+        height: auto; /* Allow button height to expand */
+        min-height: 40px; /* Minimum button height */
+        box-sizing: border-box;
+        display: inline-block;
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 600px) {
+        /* Adjust button styles for smaller screens */
+        button {
+            font-size: 14px; /* Reduce font size for smaller screens */
+        }
+    }
 
     /* Media queries for responsiveness */
     @media screen and (max-width: 600px) {
@@ -58,7 +86,7 @@
         }
          
          button {
-            width: 100%; /* Make button width full for smaller screens */
+            width: auto; /* Make button width full for smaller screens */
             font-size: 14px; /* Reduce font size for smaller screens */
         }
       
