@@ -56,7 +56,13 @@
         .container {
             padding: 10px;
         }
-        h1 {
+         
+         button {
+            width: 100%; /* Make button width full for smaller screens */
+            font-size: 14px; /* Reduce font size for smaller screens */
+        }
+      
+       h1 {
             font-size: 24px;
         }
     }
@@ -95,7 +101,7 @@
 var button = document.createElement("button");
 
 // Set button text
-button.textContent = "BitQueen came here to break the stereotype of having infinite supply, so click here and join the movement";
+button.textContent = "BitQueen came here to break the stereotype of having infinite supply, so click this button and join the movement";
 
 // Apply CSS styles
 button.style.padding = "8px 16px";
