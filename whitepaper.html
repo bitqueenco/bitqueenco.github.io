@@ -95,27 +95,27 @@
         <h1>BitQueen (BITQ) Token Whitepaper</h1>
       <hr>
         <p><strong>Introduction</strong></p>
-        <p>BitQueen (BITQ) is a groundbreaking meme token built on the EthereumPOW blockchain, designed to disrupt the proliferation of animal face meme coins and scam rug pull tokens in the cryptocurrency market. With a circulating and total supply of 13 million BITQ tokens, Bitqueen offers a fresh perspective on meme tokens by prioritizing reliability, security, and low transaction fees within the EthereumPOW ecosystem.</p>
+        <p>BitQueen (BITQ) is a groundbreaking meme token built on the EthereumPOW & Radiant blockchain, designed to disrupt the proliferation of animal face meme coins and scam rug pull tokens in the cryptocurrency market. With a circulating and total supply of 13 million BITQ tokens, Bitqueen offers a fresh perspective on meme tokens by prioritizing reliability, security, and low transaction fees within the EthereumPOW & Radiant ecosystem.</p>
         
         <p><strong>Problem Statement</strong></p>
         <p>The cryptocurrency market is flooded with animal face meme coins such as Dogecoin, Pepe, and Shiba Inu, as well as scam rug pull coins that prey on unsuspecting investors. These tokens often lack fundamental utility and rely on speculative trading, leading to market volatility and investor losses. Moreover, many of these tokens operate on proof-of-stake (PoS) blockchains, which may be susceptible to centralization and manipulation.</p>
         
         <p><strong>Solution</strong></p>
-        <p>BitQueen token addresses these challenges by leveraging the EthereumPOW blockchain, which operates on a proof-of-work (PoW) consensus mechanism known for its robust security and decentralization. By relying on PoW, Bitqueen ensures a reliable and tamper-resistant network that is resistant to manipulation and malicious attacks. Additionally, Bitqueen low transaction fees make it accessible to a wide range of users, fostering inclusivity and adoption within the EthereumPOW ecosystem.</p>
+        <p>BitQueen token addresses these challenges by leveraging the EthereumPOW & Radiant blockchain, which operates on a proof-of-work (PoW) consensus mechanism known for its robust security and decentralization. By relying on PoW, Bitqueen ensures a reliable and tamper-resistant network that is resistant to manipulation and malicious attacks. Additionally, Bitqueen low transaction fees make it accessible to a wide range of users, fostering inclusivity and adoption within the EthereumPOW & Radiant Blockchain ecosystem.</p>
         
         <p><strong>Technical Overview</strong></p>
-        <p>BitQueen is built on the EthereumPOW blockchain, utilizing its secure and decentralized infrastructure to facilitate transparent and efficient transactions. The EthereumPOW blockchain ensures the integrity of the Bitqueen network through cryptographic hashing and consensus mechanisms, providing users with confidence in the security of their transactions. With its focus on reliability and scalability, BitQueen is poised to become a trusted asset within the broader cryptocurrency market.</p>
+        <p>BitQueen is built on the EthereumPOW & Radiant blockchain, utilizing its secure and decentralized infrastructure to facilitate transparent and efficient transactions. The EthereumPOW & with Radiant blockchain ensures the integrity of the Bitqueen network through cryptographic hashing and consensus mechanisms, providing users with confidence in the security of their transactions. With its focus on reliability and scalability, BitQueen is poised to become a trusted asset within the broader cryptocurrency market.</p>
         
         <p><strong>Tokenomics</strong></p>
-        <p>The BITQ token is distributed through a fair and transparent process, inspired by the Crypto King Bitcoin with a fixed supply of only 13 million tokens ensuring scarcity and value appreciation over time to time. Bitqueen tokenomics are designed to incentivize with minimal supply by help of high demand, long-term holding and discourage speculative trading, fostering stability and sustainability within the ecosystem. Furthermore, Bitqueen low transaction fees make it an attractive option for users seeking cost-effective and efficient transactions on the EthereumPOW blockchain.</p>
+        <p>The BITQ token is distributed through a fair and transparent process, inspired by the Crypto King Bitcoin with a fixed supply of only 13 million tokens ensuring scarcity and value appreciation over time to time. Bitqueen tokenomics are designed to incentivize with minimal supply by help of high demand, long-term holding and discourage speculative trading, fostering stability and sustainability within the ecosystem. Furthermore, Bitqueen low transaction fees make it an attractive option for users seeking cost-effective and efficient transactions on the EthereumPOW & Radiant blockchain.</p>
         
         <p><strong>Roadmap</strong></p>
-        <p>BitQueen token aims to establish itself as a leading meme token within the EthereumPOW ecosystem, while also contributing to the broader adoption of cryptocurrency.</p>
+        <p>BitQueen token aims to establish itself as a leading meme token within the EthereumPOW & Radiant Blockchain ecosystem, while also contributing to the broader adoption of cryptocurrency.</p>
         
         <p><strong>Conclusion</strong></p>
-        <p>BitQueen represents a paradigm shift in the meme token space, offering a reliable and secure alternative to animal face meme coins and scam rug pull tokens. With its emphasis on transparency, security, and low fees, Bitqueen is well-positioned to disrupt the status quo and usher in a new era of trust and confidence in the cryptocurrency market.</p>
-      <hr>
+        <p>BitQueen represents a paradigm shift in the meme token space, offering a reliable and secure alternative to animal face meme coins and scam rug pull tokens. With its emphasis on transparency, security, and low fees, Bitqueen is well-positioned to disrupt the status quo and usher in a new era of trust and confidence in the cryptocurrency market.</p>  
       
+    </div>
       <script>
            
 // Create a button element
@@ -155,11 +155,17 @@ button.addEventListener("click", function() {
 });
 
 // Find the parent element of the conclusion paragraph
-var conclusionParagraph = document.querySelector("p:last-of-type");
-var parentElement = conclusionParagraph.parentElement;
+//var conclusionParagraph = document.querySelector("p:last-of-type");
+//var parentElement = conclusionParagraph.parentElement;
 
 // Append button just below the conclusion paragraph
-parentElement.appendChild(button);
+//parentElement.appendChild(button);
+      
+      // Find the div element after which you want to insert the button
+var divElement = document.querySelector("div");
+
+// Append button after the div element
+divElement.insertAdjacentElement('afterend', button);
 
 
 
@@ -181,7 +187,6 @@ setTimeout(function() {
 
 
       </script>
-      
-    </div>
+  
 </body>
 </html>
