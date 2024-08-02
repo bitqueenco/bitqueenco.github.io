@@ -1,1 +1,1 @@
-# BitQueen Token powered by EthPow Ecosystem
+# BitQueen Token powered by EthPow & Radiant Blockchain Ecosystem
