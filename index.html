@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>BiTQueen | Brittany Quinton</title>
+    <link rel="icon" type="image/png" href="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png">
+    <link rel="apple-touch-icon" href="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png">
+     <meta name="description" content="Hello Myself BitQueen."/><meta property="og:title" content="BitQueen Token" /><meta property="og:url" content="https://bitqueenco.github.io" /><meta property="og:description" content="Gone r dogs, Gone r frogs, Queen is the real memer lets make them disappear in the fog." />
+      <meta property="og:image" content="https://bitqueenco.github.io/04%20Portfolio/assets/images/BitQueen.jpg" />
+      
+      <meta property="og:type" content="website" />
+
+<!-- Twitter -->
+ <meta name="twitter:card" content="summary_large_image" />	<meta name="twitter:description" content='Gone r dogs, Gone r frogs, Queen is the real memer lets make them disappear in the freaking fog.' />	<meta name="twitter:title" content="BitQueen Token" />	<meta name="twitter:site" content="@bitqueenco" />	<meta name="twitter:image" content="https://bitqueenco.github.io/04%20Portfolio/assets/images/BitQueen.jpg" /> <meta name="twitter:creator" content="@bitqueenco" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-x: hidden;
+            padding: clamp(16px, 4vw, 60px) clamp(10px, 3vw, 40px) clamp(30px, 6vw, 80px);
+            position: relative;
+        }
+
+        /* GIF Background */
+        .gif-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: url('https://c.tenor.com/2GFc-gmTHkEAAAAC/tenor.gif') center center / cover no-repeat;
+        }
+
+        /* Dark overlay for readability */
+        .gif-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.75) 0%,
+                rgba(20, 14, 3, 0.82) 30%,
+                rgba(30, 20, 5, 0.80) 60%,
+                rgba(0, 0, 0, 0.85) 100%
+            );
+        }
+
+        /* Floating Bitcoin particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 440px;
+            width: 100%;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            margin-bottom: clamp(20px, 4vw, 40px);
+        }
+
+        .avatar-ring {
+            width: clamp(100px, 22vw, 160px);
+            height: clamp(100px, 22vw, 160px);
+            border-radius: 50%;
+            padding: clamp(3px, 0.5vw, 5px);
+            background: linear-gradient(135deg, #F7931A, #FFD700, #F7931A, #E8850C, #FFD700);
+            background-size: 300% 300%;
+            animation: ringRotate 4s linear infinite, glowPulse 3s ease-in-out infinite;
+            margin: 0 auto clamp(14px, 3vw, 24px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(247, 147, 26, 0.4), 0 0 60px rgba(247, 147, 26, 0.15);
+        }
+
+        @keyframes ringRotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(247, 147, 26, 0.4), 0 0 60px rgba(247, 147, 26, 0.15); }
+            50% { box-shadow: 0 0 40px rgba(247, 147, 26, 0.6), 0 0 80px rgba(247, 147, 26, 0.25); }
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #0d0a04;
+            object-fit: cover;
+            display: block;
+        }
+
+        .name {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.5rem, 5vw, 2.8rem);
+            color: #FFD700;
+            margin-bottom: 4px;
+            text-shadow: 0 0 20px rgba(247, 147, 26, 0.5), 0 2px 10px rgba(0,0,0,0.5);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .handle {
+            font-size: clamp(0.8rem, 2.2vw, 1.1rem);
+            color: #F7931A;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: clamp(12px, 2.5vw, 22px);
+            text-shadow: 0 0 10px rgba(247, 147, 26, 0.3);
+        }
+
+        .bio {
+            background: rgba(247, 147, 26, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(247, 147, 26, 0.2);
+            border-radius: clamp(14px, 3vw, 22px);
+            padding: clamp(14px, 3.5vw, 28px) clamp(14px, 3.5vw, 30px);
+            color: rgba(255, 255, 255, 0.88);
+            font-size: clamp(0.75rem, 2vw, 0.95rem);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .bio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(5px, 1.5vw, 10px);
+            margin-top: clamp(10px, 2vw, 16px);
+        }
+
+        .bio-tag {
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.2), rgba(255, 215, 0, 0.15));
+            border: 1px solid rgba(247, 147, 26, 0.35);
+            color: #FFD700;
+            padding: clamp(3px, 0.8vw, 6px) clamp(10px, 2vw, 16px);
+            border-radius: 50px;
+            font-size: clamp(0.62rem, 1.6vw, 0.8rem);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .welcome-text {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: clamp(0.72rem, 1.8vw, 0.9rem);
+            margin: clamp(12px, 2.5vw, 22px) 0 clamp(18px, 3vw, 32px);
+            font-style: italic;
+        }
+
+        .welcome-text span {
+            color: #F7931A;
+        }
+
+        /* Bitcoin Symbol Divider */
+        .btc-divider {
+            text-align: center;
+            margin: clamp(6px, 1.5vw, 14px) 0 clamp(14px, 2.5vw, 24px);
+            font-size: clamp(1rem, 2.5vw, 1.6rem);
+            color: #F7931A;
+            letter-spacing: clamp(6px, 2vw, 14px);
+            opacity: 0.5;
+            text-shadow: 0 0 15px rgba(247, 147, 26, 0.4);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            color: rgba(247, 147, 26, 0.6);
+            font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+            text-transform: uppercase;
+            letter-spacing: clamp(2px, 0.5vw, 4px);
+            margin-bottom: clamp(14px, 2.5vw, 22px);
+            font-weight: 600;
+        }
+
+        /* Link Buttons */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(10px, 2vw, 16px);
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: clamp(12px, 2.5vw, 20px) clamp(14px, 3vw, 26px);
+            border-radius: clamp(12px, 2.5vw, 18px);
+            background: rgba(247, 147, 26, 0.07);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(247, 147, 26, 0.18);
+            color: #fff;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            animation: slideIn 0.6s ease-out both;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .link-btn:nth-child(1) { animation-delay: 0.2s; }
+        .link-btn:nth-child(2) { animation-delay: 0.35s; }
+        .link-btn:nth-child(3) { animation-delay: 0.5s; }
+        .link-btn:nth-child(4) { animation-delay: 0.65s; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(25px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .link-btn:hover::before,
+        .link-btn:active::before {
+            left: 100%;
+        }
+
+        .link-btn:hover,
+        .link-btn:active {
+            transform: translateY(-3px) scale(1.02);
+            background: rgba(247, 147, 26, 0.14);
+            border-color: rgba(247, 147, 26, 0.45);
+            box-shadow: 0 12px 40px rgba(247, 147, 26, 0.2), 0 0 20px rgba(247, 147, 26, 0.1);
+        }
+
+        .link-icon {
+            width: clamp(36px, 8vw, 52px);
+            height: clamp(36px, 8vw, 52px);
+            border-radius: clamp(8px, 2vw, 14px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: clamp(10px, 2.5vw, 18px);
+            flex-shrink: 0;
+            font-size: clamp(18px, 4vw, 26px);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(247, 147, 26, 0.2);
+            overflow: hidden;
+            padding: clamp(5px, 1.2vw, 10px);
+        }
+
+        .link-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        /* Fallback icon styles */
+        .link-icon .fallback-icon {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .link-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .link-title {
+            font-weight: 600;
+            font-size: clamp(0.82rem, 2.2vw, 1.05rem);
+            margin-bottom: 2px;
+            color: #FFD700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .link-subtitle {
+            font-size: clamp(0.62rem, 1.6vw, 0.78rem);
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 400;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .link-arrow {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: rgba(247, 147, 26, 0.4);
+            transition: all 0.3s ease;
+            margin-left: clamp(6px, 1.5vw, 12px);
+            flex-shrink: 0;
+        }
+
+        .link-btn:hover .link-arrow,
+        .link-btn:active .link-arrow {
+            color: #F7931A;
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: clamp(28px, 5vw, 50px);
+            padding-top: clamp(16px, 3vw, 28px);
+            border-top: 1px solid rgba(247, 147, 26, 0.1);
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+            letter-spacing: 1px;
+        }
+
+        .footer .heart {
+            color: #F7931A;
+            display: inline-block;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .footer .btc-footer {
+            color: #F7931A;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            margin-top: 8px;
+            opacity: 0.5;
+            text-shadow: 0 0 10px rgba(247, 147, 26, 0.3);
+        }
+
+        /* Sparkle effect on click */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: sparkleFade 0.6s ease-out forwards;
+        }
+
+        @keyframes sparkleFade {
+            0% { transform: scale(0) rotate(0deg); opacity: 1; }
+            100% { transform: scale(1) rotate(180deg); opacity: 0; }
+        }
+
+        /* Crown animation */
+        .crown {
+            display: inline-block;
+            animation: crownBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes crownBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-4px) rotate(-5deg); }
+            75% { transform: translateY(-4px) rotate(5deg); }
+        }
+
+        /* Satoshi quote */
+        .satoshi-quote {
+            text-align: center;
+            font-size: clamp(0.6rem, 1.4vw, 0.78rem);
+            color: rgba(247, 147, 26, 0.35);
+            font-style: italic;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== RESPONSIVE BREAKPOINTS ========== */
+
+        /* Extra small phones (320px - 359px) — 4 inch screens */
+        @media (max-width: 359px) {
+            body {
+                padding: 12px 8px 30px;
+            }
+            .avatar-ring {
+                width: 90px;
+                height: 90px;
+            }
+            .name {
+                font-size: 1.35rem;
+            }
+            .handle {
+                font-size: 0.75rem;
+                margin-bottom: 10px;
+            }
+            .bio {
+                padding: 12px 12px;
+                font-size: 0.72rem;
+                border-radius: 12px;
+                line-height: 1.6;
+            }
+            .bio-tags {
+                gap: 4px;
+            }
+            .bio-tag {
+                padding: 3px 8px;
+                font-size: 0.58rem;
+            }
+            .welcome-text {
+                font-size: 0.68rem;
+                margin: 10px 0 16px;
+            }
+            .btc-divider {
+                font-size: 0.9rem;
+                letter-spacing: 5px;
+                margin: 4px 0 12px;
+            }
+            .section-title {
+                font-size: 0.55rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 12px;
+            }
+            .links-container {
+                gap: 8px;
+            }
+            .link-btn {
+                padding: 10px 12px;
+                border-radius: 10px;
+            }
+            .link-icon {
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+                margin-right: 10px;
+                padding: 5px;
+            }
+            .link-title {
+                font-size: 0.78rem;
+            }
+            .link-subtitle {
+                font-size: 0.58rem;
+            }
+            .link-arrow {
+                font-size: 0.85rem;
+                margin-left: 4px;
+            }
+            .footer {
+                margin-top: 24px;
+                padding-top: 14px;
+            }
+            .footer p {
+                font-size: 0.58rem;
+            }
+        }
+
+        /* Small phones (360px - 479px) */
+        @media (min-width: 360px) and (max-width: 479px) {
+            body {
+                padding: 16px 12px 36px;
+            }
+            .avatar-ring {
+                width: 105px;
+                height: 105px;
+            }
+            .name {
+                font-size: 1.6rem;
+            }
+            .handle {
+                font-size: 0.85rem;
+            }
+            .bio {
+                padding: 16px 16px;
+                font-size: 0.78rem;
+            }
+            .bio-tag {
+                padding: 4px 10px;
+                font-size: 0.65rem;
+            }
+            .link-btn {
+                padding: 13px 16px;
+            }
+            .link-icon {
+                width: 38px;
+                height: 38px;
+                padding: 6px;
+            }
+            .link-title {
+                font-size: 0.85rem;
+            }
+            .link-subtitle {
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Medium phones & small tablets (480px - 767px) */
+        @media (min-width: 480px) and (max-width: 767px) {
+            body {
+                padding: 24px 20px 50px;
+            }
+            .container {
+                max-width: 460px;
+            }
+            .avatar-ring {
+                width: 120px;
+                height: 120px;
+            }
+            .name {
+                font-size: 2rem;
+            }
+            .bio {
+                padding: 20px 22px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Tablets (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            body {
+                padding: 40px 30px 70px;
+                align-items: center;
+            }
+            .container {
+                max-width: 500px;
+            }
+            .avatar-ring {
+                width: 140px;
+                height: 140px;
+            }
+            .name {
+                font-size: 2.4rem;
+            }
+            .handle {
+                font-size: 1rem;
+            }
+            .bio {
+                padding: 24px 28px;
+                font-size: 0.92rem;
+                border-radius: 20px;
+            }
+            .bio-tag {
+                padding: 6px 16px;
+                font-size: 0.78rem;
+            }
+            .link-btn {
+                padding: 18px 24px;
+                border-radius: 16px;
+            }
+            .link-icon {
+                width: 50px;
+                height: 50px;
+                padding: 9px;
+            }
+            .link-title {
+                font-size: 1rem;
+            }
+            .link-subtitle {
+                font-size: 0.76rem;
+            }
+            .welcome-text {
+                font-size: 0.88rem;
+            }
+        }
+
+        /* Small desktops & laptops (1024px - 1439px) */
+        @media (min-width: 1024px) and (max-width: 1439px) {
+            body {
+                padding: 50px 40px 80px;
+                align-items: center;
+            }
+            .container {
+                max-width: 520px;
+            }
+            .avatar-ring {
+                width: 150px;
+                height: 150px;
+            }
+            .name {
+                font-size: 2.6rem;
+            }
+            .handle {
+                font-size: 1.05rem;
+            }
+            .bio {
+                padding: 26px 30px;
+                font-size: 0.95rem;
+                border-radius: 22px;
+            }
+            .bio-tag {
+                padding: 6px 18px;
+                font-size: 0.8rem;
+            }
+            .link-btn {
+                padding: 20px 26px;
+                border-radius: 18px;
+            }
+            .link-icon {
+                width: 52px;
+                height: 52px;
+                padding: 10px;
+                border-radius: 14px;
+            }
+            .link-title {
+                font-size: 1.05rem;
+            }
+            .link-subtitle {
+                font-size: 0.78rem;
+            }
+            .welcome-text {
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 0.78rem;
+                letter-spacing: 4px;
+            }
+        }
+
+        /* Large desktops & TVs (1440px+) */
+        @media (min-width: 1440px) {
+            body {
+                padding: 60px 40px 100px;
+                align-items: center;
+            }
+            .container {
+                max-width: 560px;
+            }
+            .avatar-ring {
+                width: 170px;
+                height: 170px;
+                padding: 5px;
+            }
+            .name {
+                font-size: 3rem;
+            }
+            .handle {
+                font-size: 1.15rem;
+                letter-spacing: 2px;
+                margin-bottom: 24px;
+            }
+            .bio {
+                padding: 30px 34px;
+                font-size: 1rem;
+                border-radius: 24px;
+                line-height: 1.8;
+            }
+            .bio-tags {
+                gap: 10px;
+                margin-top: 18px;
+            }
+            .bio-tag {
+                padding: 7px 20px;
+                font-size: 0.85rem;
+            }
+            .link-btn {
+                padding: 22px 28px;
+                border-radius: 20px;
+                gap: 4px;
+            }
+            .links-container {
+                gap: 18px;
+            }
+            .link-icon {
+                width: 56px;
+                height: 56px;
+                padding: 10px;
+                border-radius: 16px;
+                margin-right: 20px;
+            }
+            .link-title {
+                font-size: 1.1rem;
+            }
+            .link-subtitle {
+                font-size: 0.82rem;
+            }
+            .link-arrow {
+                font-size: 1.3rem;
+            }
+            .welcome-text {
+                font-size: 0.95rem;
+            }
+            .section-title {
+                font-size: 0.82rem;
+                letter-spacing: 5px;
+                margin-bottom: 24px;
+            }
+            .btc-divider {
+                font-size: 1.6rem;
+                letter-spacing: 16px;
+            }
+            .footer {
+                margin-top: 50px;
+                padding-top: 30px;
+            }
+            .footer p {
+                font-size: 0.78rem;
+            }
+            .satoshi-quote {
+                font-size: 0.82rem;
+            }
+        }
+
+        /* Ultra-wide / 4K TVs (1920px+) */
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 620px;
+            }
+            .avatar-ring {
+                width: 190px;
+                height: 190px;
+                padding: 6px;
+            }
+            .name {
+                font-size: 3.4rem;
+            }
+            .handle {
+                font-size: 1.25rem;
+            }
+            .bio {
+                padding: 34px 40px;
+                font-size: 1.08rem;
+            }
+            .bio-tag {
+                padding: 8px 22px;
+                font-size: 0.9rem;
+            }
+            .link-btn {
+                padding: 24px 32px;
+            }
+            .link-icon {
+                width: 62px;
+                height: 62px;
+                padding: 12px;
+            }
+            .link-title {
+                font-size: 1.18rem;
+            }
+            .link-subtitle {
+                font-size: 0.88rem;
+            }
+        }
+
+        /* Landscape phones — prevent overflow */
+        @media (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding: 10px 15px 20px;
+                align-items: flex-start;
+            }
+            .avatar-ring {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+            .name {
+                font-size: 1.4rem;
+            }
+            .handle {
+                font-size: 0.75rem;
+                margin-bottom: 8px;
+            }
+            .bio {
+                padding: 12px 14px;
+                font-size: 0.72rem;
+                line-height: 1.5;
+            }
+            .bio-tag {
+                padding: 2px 8px;
+                font-size: 0.58rem;
+            }
+            .welcome-text {
+                margin: 8px 0 12px;
+                font-size: 0.68rem;
+            }
+            .btc-divider {
+                margin: 4px 0 10px;
+                font-size: 0.85rem;
+            }
+            .section-title {
+                margin-bottom: 10px;
+            }
+            .links-container {
+                gap: 6px;
+            }
+            .link-btn {
+                padding: 10px 14px;
+            }
+            .link-icon {
+                width: 32px;
+                height: 32px;
+                padding: 5px;
+            }
+            .profile-section {
+                margin-bottom: 14px;
+            }
+            .footer {
+                margin-top: 16px;
+                padding-top: 10px;
+            }
+        }
+
+        /* Touch device improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .link-btn:active {
+                transform: scale(0.97);
+                background: rgba(247, 147, 26, 0.18);
+                border-color: rgba(247, 147, 26, 0.5);
+            }
+            .link-btn:hover {
+                transform: none;
+            }
+        }
+
+        /* Prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GIF Background -->
+    <div class="gif-background"></div>
+    <div class="gif-overlay"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="avatar-ring">
+                <img class="avatar" src="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png" alt="BiTQueen - Brittany Quinton">
+            </div>
+            <h1 class="name"><span class="crown">👑</span> Brittany Quinton</h1>
+            <p class="handle">@BiTQueen</p>
+
+            <div class="bio">
+                <p>Hey there! I'm <strong>Brittany Quinton</strong> aka <strong style="color: #F7931A;">BiTQueen</strong> — your Official Sora & Aura Addict, a passionate Torque-Lover Girl, devoted Music Fan, and an adventurous Traveler exploring the world one journey at a time. ✨</p>
+                <div class="bio-tags">
+                    <span class="bio-tag">🎬 Sora Addict</span>
+                    <span class="bio-tag">🌌 Aura Addict</span>
+                    <span class="bio-tag">🏎️ Torque-Lover</span>
+                    <span class="bio-tag">🎵 Music Fan</span>
+                    <span class="bio-tag">✈️ Traveler</span>
+                </div>
+            </div>
+
+            <p class="welcome-text">Visit my social links below — <span>You all are Welcome!</span> 🧡</p>
+
+            <div class="btc-divider">₿ ₿ ₿</div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="section-title">— My Links —</div>
+
+        <div class="links-container">
+            <!-- X / Twitter -->
+            <a href="https://x.com/bitqueenco" target="_blank" rel="noopener noreferrer" class="link-btn" onclick="sparkle(event)">
+                <div class="link-icon">
+                    <img src="https://abs.twimg.com/favicons/twitter.3.ico" alt="X" onerror="this.parentElement.innerHTML='<div class=\'fallback-icon\'><svg width=\'22\' height=\'22\' viewBox=\'0 0 24 24\' fill=\'white\'><path d=\'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\'/></svg></div>'">
+                </div>
+                <div class="link-text">
+                    <div class="link-title">X / Twitter</div>
+                    <div class="link-subtitle">Follow me @bitqueenco</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <!-- Tenor -->
+            <a href="https://tenor.com/users/bitqueen" target="_blank" rel="noopener noreferrer" class="link-btn" onclick="sparkle(event)">
+                <div class="link-icon">
+                    <img src="https://tenor.com/favicon.ico" alt="Tenor" onerror="this.parentElement.innerHTML='<div class=\'fallback-icon\'><svg width=\'22\' height=\'22\' viewBox=\'0 0 24 24\' fill=\'white\'><path d=\'M4 2h6v10H4V2zm10 0h6v6h-6V2zM4 14h6v8H4v-8zm10-2h6v10h-6V12z\'/></svg></div>'">
+                </div>
+                <div class="link-text">
+                    <div class="link-title">Tenor</div>
+                    <div class="link-subtitle">Check out my GIFs</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <!-- Sora -->
+            <a href="https://sora.chatgpt.com/p/s_69a2fc6d98e4819183e9242e8025f0ad?psh=HXVzZXIteEp5ZVJ3ZHg5ZFk5aDRKQXJSQXFzbnFp.zX7_Sfsg145h" target="_blank" rel="noopener noreferrer" class="link-btn" onclick="sparkle(event)">
+                <div class="link-icon">
+                    <img src="https://cdn.oaistatic.com/assets/favicon-miwirzcx.ico" alt="Sora" onerror="this.src='https://chatgpt.com/favicon.ico'" data-fallback-used="false" onload="if(this.naturalWidth===0){this.onerror()}">
+                </div>
+                <div class="link-text">
+                    <div class="link-title">Sora</div>
+                    <div class="link-subtitle">My Sora AI creations</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <!-- Crypto Website -->
+            <a href="https://bitqueenco.github.io/index1.html" target="_blank" rel="noopener noreferrer" class="link-btn" onclick="sparkle(event)">
+                <div class="link-icon">
+                    <img src="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png" alt="BitQueenCo" onerror="this.parentElement.innerHTML='<div class=\'fallback-icon\'><svg width=\'28\' height=\'28\' viewBox=\'0 0 64 64\' fill=\'none\'><circle cx=\'32\' cy=\'32\' r=\'30\' fill=\'%23F7931A\'/><text x=\'32\' y=\'42\' text-anchor=\'middle\' fill=\'white\' font-size=\'30\' font-weight=\'bold\'>₿</text></svg></div>'">
+                </div>
+                <div class="link-text">
+                    <div class="link-title">Crypto Website</div>
+                    <div class="link-subtitle">Explore BitQueenCo</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Made with <span class="heart">🧡</span> by BiTQueen</p>
+            <div class="btc-footer">₿</div>
+            <p class="satoshi-quote">"In cryptography we trust."</p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles — scale count based on screen size
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const screenWidth = window.innerWidth;
+            let particleCount = 20;
+            let btcCount = 3;
+
+            if (screenWidth >= 768) { particleCount = 30; btcCount = 5; }
+            if (screenWidth >= 1440) { particleCount = 45; btcCount = 8; }
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                const size = Math.random() * 5 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                particle.style.animationDelay = (Math.random() * 10) + 's';
+
+                const colors = [
+                    'rgba(247, 147, 26, 0.25)',
+                    'rgba(255, 215, 0, 0.2)',
+                    'rgba(232, 133, 12, 0.2)',
+                    'rgba(247, 147, 26, 0.15)',
+                    'rgba(255, 193, 7, 0.15)',
+                    'rgba(255, 255, 255, 0.08)'
+                ];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+                container.appendChild(particle);
+            }
+
+            // Add some ₿ symbol particles
+            for (let i = 0; i < btcCount; i++) {
+                const btcParticle = document.createElement('div');
+                btcParticle.classList.add('particle');
+                btcParticle.textContent = '₿';
+                btcParticle.style.width = 'auto';
+                btcParticle.style.height = 'auto';
+                btcParticle.style.background = 'none';
+                btcParticle.style.color = 'rgba(247, 147, 26, 0.15)';
+                btcParticle.style.fontSize = (Math.random() * 16 + 10) + 'px';
+                btcParticle.style.left = Math.random() * 100 + '%';
+                btcParticle.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                btcParticle.style.animationDelay = (Math.random() * 12) + 's';
+                container.appendChild(btcParticle);
+            }
+        }
+
+        // Sparkle effect on link click
+        function sparkle(event) {
+            const colors = ['#F7931A', '#FFD700', '#E8850C', '#FFC107', '#FF9800'];
+            for (let i = 0; i < 8; i++) {
+                const spark = document.createElement('div');
+                spark.classList.add('sparkle');
+                spark.style.left = (event.clientX + (Math.random() - 0.5) * 60) + 'px';
+                spark.style.top = (event.clientY + (Math.random() - 0.5) * 60) + 'px';
+                spark.style.width = (Math.random() * 8 + 4) + 'px';
+                spark.style.height = spark.style.width;
+                spark.style.borderRadius = '50%';
+                spark.style.background = colors[Math.floor(Math.random() * colors.length)];
+                document.body.appendChild(spark);
+                setTimeout(() => spark.remove(), 600);
+            }
+        }
+
+        // Initialize
+        createParticles();
+
+        // Add subtle parallax to avatar on mouse move — only on non-touch devices
+        if (window.matchMedia('(hover: hover)').matches) {
+            document.addEventListener('mousemove', (e) => {
+                const avatar = document.querySelector('.avatar-ring');
+                const x = (e.clientX / window.innerWidth - 0.5) * 10;
+                const y = (e.clientY / window.innerHeight - 0.5) * 10;
+                avatar.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        }
+    </script>
+</body>
+</html>
