@@ -1,1 +1,1 @@
-# BitQueen Token powered by Radiant Blockchain & Ethpow Ecosystem
+# BitQueen LalaLand
