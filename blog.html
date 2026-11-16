@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BitQueenCo</title>
+<noscript><meta http-equiv="refresh" content="6;url=https://bitqueenco.blogspot.com"></noscript>
+<link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="icon" type="image/png" href="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png">
+    <link rel="apple-touch-icon" href="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png">
+     <meta name="description" content="Hello Myself BitQueen."/><meta property="og:title" content="BitQueen" /><meta property="og:url" content="https://bitqueenco.github.io" /><meta property="og:description" content="Hello Myself Bitqueen a.k.a Brittany Quinton." />
+      <meta property="og:image" content="https://bitqueenco.github.io/04%20Portfolio/assets/images/BitQueen.jpg" />
+      
+      <meta property="og:type" content="website" />
+
+<!-- Twitter -->
+ <meta name="twitter:card" content="summary_large_image" />	<meta name="twitter:description" content='Myself BitQueen a.k.a Brittany Quinton.' />	<meta name="twitter:title" content="BitQueen" />	<meta name="twitter:site" content="@bitqueenco" />	<meta name="twitter:image" content="https://bitqueenco.github.io/04%20Portfolio/assets/images/BitQueen.jpg" /> <meta name="twitter:creator" content="@bitqueenco" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sat-orange: #F7931A;   /* Bitcoin / Satoshi orange */
+    --sat-light:  #FFB347;
+    --sat-deep:   #C86E08;
+    --sat-darker: #8A4600;
+    --sat-dark:   #1B0F02;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--sat-dark);
+    font-family: 'Satoshi', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(circle at 50% 45%, var(--sat-light) 0%, var(--sat-orange) 40%, var(--sat-deep) 90%);
+  }
+
+  /* Crypto grid background */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(27,15,2,.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(27,15,2,.12) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Falling crypto symbols in background */
+  #coins { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .coin {
+    position: absolute;
+    top: -80px;
+    font-weight: 900;
+    color: rgba(27,15,2,.16);
+    animation: coinFall linear infinite;
+    user-select: none;
+  }
+  @keyframes coinFall {
+    to { transform: translateY(115vh) rotate(360deg); }
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px clamp(14px, 4vw, 40px);
+    background: var(--sat-orange);
+    border-bottom: 4px solid var(--sat-dark);
+    box-shadow: 0 4px 0 rgba(27,15,2,.25);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: clamp(1.1rem, 3.5vw, 1.5rem); letter-spacing: 1px; }
+  .logo {
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    background: var(--sat-dark);
+    color: var(--sat-orange);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 900;
+    animation: logoSpin 6s linear infinite;
+  }
+  @keyframes logoSpin { to { transform: rotateY(360deg); } }
+  .status {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 12px;
+    background: var(--sat-dark);
+    color: var(--sat-orange);
+    font-size: .8rem; font-weight: 700; letter-spacing: 2px;
+  }
+  .status i { width: 9px; height: 9px; border-radius: 50%; background: #3dff8a; box-shadow: 0 0 8px #3dff8a; animation: blink 1s infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+
+  /* Ticker strip */
+  .ticker {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--sat-dark);
+    color: var(--sat-orange);
+    font-weight: 700;
+    font-size: .85rem;
+    letter-spacing: 2px;
+    padding: 8px 0;
+  }
+  .ticker span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 22s linear infinite;
+  }
+  @keyframes marquee { to { transform: translateX(-100%); } }
+
+  /* ---------- Main ---------- */
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .fall { animation: fall .7s cubic-bezier(.2,.7,.3,1) both; }
+  @keyframes fall {
+    0%   { transform: translateY(-110vh); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Big square box */
+  .box {
+    position: relative;
+    width: min(86vw, 50vh, 520px);
+    height: min(86vw, 50vh, 520px);
+    border: 5px solid var(--sat-dark);
+    border-radius: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #4a2806 0%, var(--sat-dark) 100%);
+    box-shadow: 10px 10px 0 var(--sat-darker), 0 0 50px rgba(255, 190, 90, .55);
+  }
+  /* corner brackets */
+  .box::before, .box::after {
+    content: "";
+    position: absolute;
+    width: 28px; height: 28px;
+    border: 3px solid var(--sat-orange);
+    z-index: 3;
+    pointer-events: none;
+  }
+  .box::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+  .box::after  { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+  /* Streaks to feel like falling down (move upward) */
+  .streaks { position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
+  .streak {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(247,147,26,.8), transparent);
+    animation: streakUp linear infinite;
+  }
+  @keyframes streakUp {
+    from { transform: translateY(120%); }
+    to   { transform: translateY(-130%); }
+  }
+
+  /* 3D stage so image tumbles from all sides */
+  .stage {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .spinner {
+    display: block;
+    width: 78%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    transform-origin: 50% 50%;
+    animation: tumble 6s forwards;
+    will-change: transform;
+  }
+
+  /* 0-6%:    lower face zoomed in
+     6-18%:   zoom out (lower face)
+     18-30%:  half tumble one way (all axes)
+     30-42%:  half tumble back
+     42-100%: tumbling on X, Y and Z together while zooming out, lands upright */
+  @keyframes tumble {
+    /* PHASE 1 (0-2s): zoomed in on lower face, fast swing left, right, left, right */
+    0%      { transform: rotate(0deg)    scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
+    8.33%   { transform: rotate(-150deg) scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
+    16.67%  { transform: rotate(150deg)  scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
+    25%     { transform: rotate(-150deg) scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
+    33.33%  { transform: rotate(150deg)  scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
+    /* PHASE 2 (2-4s): half face visible, same fast swing left, right, left, right */
+    41.67%  { transform: rotate(-150deg) scale(2) translateY(-11%); animation-timing-function: ease-in-out; }
+    50%     { transform: rotate(150deg)  scale(2) translateY(-11%); animation-timing-function: ease-in-out; }
+    58.33%  { transform: rotate(-150deg) scale(2) translateY(-11%); animation-timing-function: ease-in-out; }
+    66.67%  { transform: rotate(150deg)  scale(2) translateY(-11%); animation-timing-function: cubic-bezier(.35,0,.2,1); }
+    /* PHASE 3 (4-6s): fast spin while zooming out, lands upright */
+    100%    { transform: rotate(1440deg) scale(1) translateY(0); }
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    position: relative;
+    z-index: 2;
+    padding: 16px clamp(14px, 4vw, 40px) 18px;
+    text-align: center;
+    background: var(--sat-deep);
+    border-top: 4px solid var(--sat-dark);
+    box-shadow: 0 -4px 0 rgba(27,15,2,.25);
+  }
+  .loading {
+    font-size: clamp(1.3rem, 4.5vw, 1.9rem);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 3px 3px 0 var(--sat-dark);
+    animation: pulse 1s ease-in-out infinite;
+  }
+  .loading .dot { display: inline-block; animation: bounce .8s infinite; }
+  .loading .dot:nth-child(2) { animation-delay: .15s; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+  .bar {
+    width: min(90%, 420px);
+    height: 12px;
+    margin: 12px auto 8px;
+    background: var(--sat-dark);
+    border: 2px solid var(--sat-dark);
+  }
+  .bar b {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: repeating-linear-gradient(45deg, var(--sat-orange) 0 10px, var(--sat-light) 10px 20px);
+    animation: fill 6s linear forwards;
+  }
+  @keyframes fill { to { width: 100%; } }
+  .meta { font-size: .75rem; font-weight: 700; letter-spacing: 2px; color: var(--sat-dark); text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div id="coins"></div>
+
+  <header>
+    <div class="brand"><div class="logo">&#8383;</div><span>BitQueenCo</span></div>
+    <div class="status"><i></i>ONLINE</div>
+  </header>
+
+  <div class="ticker"><span>&#8383; BITCOIN &bull; HODL &bull; DECENTRALIZED &bull; BLOCKCHAIN &bull; SATOSHI &bull; WEB3 &bull; TO THE MOON &bull; NOT YOUR KEYS NOT YOUR COINS &bull; &#8383; BITCOIN &bull; HODL &bull; DECENTRALIZED &bull; BLOCKCHAIN &bull; SATOSHI &bull; WEB3 &bull;</span></div>
+
+  <main>
+    <div class="fall">
+      <div class="box">
+        <div class="streaks" id="streaks"></div>
+        <div class="stage">
+          <img class="spinner" src="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqaww.png" alt="BitQueenCo">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="loading" aria-live="polite">Loading<span class="dot">.</span><span class="dot">.</span></div>
+    <div class="bar"><b></b></div>
+    <div class="meta">Syncing blocks &bull; &copy; BitQueenCo</div>
+  </footer>
+
+<script>
+  // Falling background crypto symbols
+  (function () {
+    var symbols = ['\u20BF', '\u039E', '\u20BF', '\u25C8', '\u20BF', '\u26A1'];
+    var wrap = document.getElementById('coins');
+    for (var i = 0; i < 18; i++) {
+      var c = document.createElement('div');
+      c.className = 'coin';
+      c.textContent = symbols[i % symbols.length];
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.fontSize = (20 + Math.random() * 50) + 'px';
+      c.style.animationDuration = (5 + Math.random() * 7) + 's';
+      c.style.animationDelay = (-Math.random() * 10) + 's';
+      wrap.appendChild(c);
+    }
+    // Falling-speed streaks inside the box
+    var s = document.getElementById('streaks');
+    for (var j = 0; j < 22; j++) {
+      var l = document.createElement('div');
+      l.className = 'streak';
+      l.style.left = Math.random() * 100 + '%';
+      l.style.height = (30 + Math.random() * 50) + '%';
+      l.style.animationDuration = (0.6 + Math.random() * 0.9) + 's';
+      l.style.animationDelay = (-Math.random() * 1.5) + 's';
+      s.appendChild(l);
+    }
+  })();
+
+  var target = "https://bitqueenco.blogspot.com";
+  // Redirect after 6 seconds
+  setTimeout(function () {
+    window.location.replace(target);
+  }, 6000);
+</script>
+</body>
+</html>
