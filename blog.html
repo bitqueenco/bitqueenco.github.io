@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BitQueenCo</title>
-<noscript><meta http-equiv="refresh" content="6;url=https://bitqueenco.blogspot.com"></noscript>
-<link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="icon" type="image/png" href="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png">
+<title>BiTQueen | Brittany Quinton</title>
+    <link rel="icon" type="image/png" href="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png">
     <link rel="apple-touch-icon" href="https://bitqueenco.github.io/04%20Portfolio/assets/images/bitqueencoo.png">
      <meta name="description" content="Hello Myself BitQueen."/><meta property="og:title" content="BitQueen" /><meta property="og:url" content="https://bitqueenco.github.io" /><meta property="og:description" content="Hello Myself Bitqueen a.k.a Brittany Quinton." />
       <meta property="og:image" content="https://bitqueenco.github.io/04%20Portfolio/assets/images/BitQueen.jpg" />
@@ -18,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     
+<noscript><meta http-equiv="refresh" content="6;url=https://bitqueenco.blogspot.com"></noscript>
+<link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -28,10 +28,13 @@
     --sat-dark:   #1B0F02;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { height: 100%; }
+  html { height: 100%; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body {
     position: relative;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -44,6 +47,7 @@
   body::before {
     content: "";
     position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
     inset: 0;
     background-image:
       linear-gradient(rgba(27,15,2,.12) 1px, transparent 1px),
@@ -54,7 +58,7 @@
   }
 
   /* Falling crypto symbols in background */
-  #coins { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  #coins { position: fixed; top: 0; right: 0; bottom: 0; left: 0; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
   .coin {
     position: absolute;
     top: -80px;
@@ -75,12 +79,17 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 12px clamp(14px, 4vw, 40px);
+    flex-shrink: 0;
+    padding: 12px 20px;
+    padding: 12px clamp(10px, 4vw, 40px);
     background: var(--sat-orange);
     border-bottom: 4px solid var(--sat-dark);
     box-shadow: 0 4px 0 rgba(27,15,2,.25);
   }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: clamp(1.1rem, 3.5vw, 1.5rem); letter-spacing: 1px; }
+  .brand { display: flex; align-items: center; gap: 10px; min-width: 0; font-weight: 900; font-size: 1.3rem; font-size: clamp(.95rem, 3.5vw, 1.5rem); letter-spacing: 1px; }
+  .brand span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .logo { flex-shrink: 0; }
+  .status { flex-shrink: 0; white-space: nowrap; }
   .logo {
     width: 40px; height: 40px;
     display: grid; place-items: center;
@@ -108,6 +117,7 @@
     z-index: 2;
     overflow: hidden;
     white-space: nowrap;
+    flex-shrink: 0;
     background: var(--sat-dark);
     color: var(--sat-orange);
     font-weight: 700;
@@ -126,11 +136,22 @@
   main {
     position: relative;
     z-index: 1;
-    flex: 1;
+    flex: 1 1 auto;
+    min-height: 0;
+    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 12px;
+    --sh: 8px;
+  }
+  /* Modern browsers: the square box always fits the space left between header and footer */
+  @supports (width: 1cqw) {
+    main { container-type: size; }
+    .box {
+      width: min(calc(min(100cqw, 100cqh) - var(--sh)), 640px);
+      height: min(calc(min(100cqw, 100cqh) - var(--sh)), 640px);
+    }
   }
   .fall { animation: fall .7s cubic-bezier(.2,.7,.3,1) both; }
   @keyframes fall {
@@ -141,13 +162,16 @@
   /* Big square box */
   .box {
     position: relative;
+    width: 80vw;
+    height: 80vw;
     width: min(86vw, 50vh, 520px);
     height: min(86vw, 50vh, 520px);
+    flex-shrink: 0;
     border: 5px solid var(--sat-dark);
     border-radius: 0;
     overflow: hidden;
     background: radial-gradient(circle at 50% 50%, #4a2806 0%, var(--sat-dark) 100%);
-    box-shadow: 10px 10px 0 var(--sat-darker), 0 0 50px rgba(255, 190, 90, .55);
+    box-shadow: 8px 8px 0 var(--sat-darker), 0 0 40px rgba(255, 190, 90, .55);
   }
   /* corner brackets */
   .box::before, .box::after {
@@ -162,7 +186,7 @@
   .box::after  { bottom: 8px; right: 8px; border-left: none; border-top: none; }
 
   /* Streaks to feel like falling down (move upward) */
-  .streaks { position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
+  .streaks { position: absolute; top: 0; right: 0; bottom: 0; left: 0; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
   .streak {
     position: absolute;
     top: 0;
@@ -178,6 +202,7 @@
   /* 3D stage so image tumbles from all sides */
   .stage {
     position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
     inset: 0;
     z-index: 2;
     display: flex;
@@ -202,32 +227,43 @@
      42-100%: tumbling on X, Y and Z together while zooming out, lands upright */
   @keyframes tumble {
     /* PHASE 1 (0-2s): zoomed in on lower face, fast swing left, right, left, right */
-    0%      { transform: rotate(0deg)    scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
-    8.33%   { transform: rotate(-150deg) scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
-    16.67%  { transform: rotate(150deg)  scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
-    25%     { transform: rotate(-150deg) scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
-    33.33%  { transform: rotate(150deg)  scale(3) translateY(-23%); animation-timing-function: ease-in-out; }
-    /* PHASE 2 (2-4s): half face visible, same fast swing left, right, left, right */
-    41.67%  { transform: rotate(-150deg) scale(2) translateY(-11%); animation-timing-function: ease-in-out; }
-    50%     { transform: rotate(150deg)  scale(2) translateY(-11%); animation-timing-function: ease-in-out; }
-    58.33%  { transform: rotate(-150deg) scale(2) translateY(-11%); animation-timing-function: ease-in-out; }
-    66.67%  { transform: rotate(150deg)  scale(2) translateY(-11%); animation-timing-function: cubic-bezier(.35,0,.2,1); }
-    /* PHASE 3 (4-6s): fast spin while zooming out, lands upright */
-    100%    { transform: rotate(1440deg) scale(1) translateY(0); }
+    0%      { transform: rotate(0deg)     scale(5) translateY(-11%); animation-timing-function: linear; }
+    8.33%   { transform: rotate(-450deg)  scale(5) translateY(-11%); animation-timing-function: linear; }
+    16.67%  { transform: rotate(0deg)     scale(5) translateY(-11%); animation-timing-function: linear; }
+    25%     { transform: rotate(-450deg)  scale(5) translateY(-11%); animation-timing-function: linear; }
+    33.33%  { transform: rotate(0deg)     scale(5) translateY(-11%); animation-timing-function: ease-out; }
+    /* quick reverse burst between phase 1 and 2 (~0.15s) */
+    35.83%  { transform: rotate(300deg)   scale(3.4) translateY(-11%); animation-timing-function: linear; }
+    /* PHASE 2 (2-4s): half face visible, same circular spin left, right, left, right */
+    41.67%  { transform: rotate(-450deg)  scale(2) translateY(-11%); animation-timing-function: linear; }
+    50%     { transform: rotate(0deg)     scale(2) translateY(-11%); animation-timing-function: linear; }
+    58.33%  { transform: rotate(-450deg)  scale(2) translateY(-11%); animation-timing-function: linear; }
+    66.67%  { transform: rotate(0deg)     scale(2) translateY(-11%); translate: 0 0; opacity: 1; animation-timing-function: ease-out; }
+    /* quick reverse burst between phase 2 and 3 (~0.15s) */
+    69.17%  { transform: rotate(-300deg)  scale(1.6) translateY(-5%); translate: 0 0; opacity: 1; animation-timing-function: linear; }
+    /* PHASE 3 (4-6s): fast spin, zooms out to microscopic size and drops away like falling down */
+    80%     { transform: rotate(720deg)   scale(0.9) translateY(0); translate: 0 4%; opacity: 1; animation-timing-function: linear; }
+    92%     { transform: rotate(1440deg)  scale(0.25) translateY(0); translate: 0 14%; opacity: 1; animation-timing-function: cubic-bezier(.5,0,.9,.6); }
+    100%    { transform: rotate(2160deg)  scale(0.005) translateY(0); translate: 0 32%; opacity: 0; }
   }
 
   /* ---------- Footer ---------- */
   footer {
     position: relative;
     z-index: 2;
-    padding: 16px clamp(14px, 4vw, 40px) 18px;
+    flex-shrink: 0;
+    padding: 16px 20px 18px;
+    padding: 16px clamp(10px, 4vw, 40px) 18px;
     text-align: center;
     background: var(--sat-deep);
     border-top: 4px solid var(--sat-dark);
     box-shadow: 0 -4px 0 rgba(27,15,2,.25);
   }
   .loading {
-    font-size: clamp(1.3rem, 4.5vw, 1.9rem);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1.5rem;
+    font-size: clamp(1.05rem, 4.5vw, 1.9rem);
     font-weight: 900;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -256,6 +292,57 @@
   }
   @keyframes fill { to { width: 100%; } }
   .meta { font-size: .75rem; font-weight: 700; letter-spacing: 2px; color: var(--sat-dark); text-transform: uppercase; }
+
+  /* ---------- Responsive ---------- */
+
+  /* Short screens (landscape phones, small feature phones): save vertical space */
+  @media (max-height: 520px) {
+    header { padding-top: 6px; padding-bottom: 6px; border-bottom-width: 3px; }
+    .logo { width: 30px; height: 30px; font-size: 1.15rem; }
+    .ticker { display: none; }
+    footer { padding-top: 8px; padding-bottom: 8px; border-top-width: 3px; }
+    .bar { height: 8px; margin: 6px auto 4px; }
+    .meta { display: none; }
+    main { padding: 8px; --sh: 6px; }
+    .box { box-shadow: 6px 6px 0 var(--sat-darker), 0 0 30px rgba(255, 190, 90, .5); }
+  }
+
+  /* Very short screens */
+  @media (max-height: 300px) {
+    .bar { display: none; }
+    .status { display: none; }
+    .loading { font-size: 1rem; }
+  }
+
+  /* Small phones */
+  @media (max-width: 380px) {
+    .box { border-width: 3px; }
+    .box::before, .box::after { width: 16px; height: 16px; border-width: 2px; }
+    .box::before { top: 5px; left: 5px; }
+    .box::after { bottom: 5px; right: 5px; }
+    .logo { width: 32px; height: 32px; font-size: 1.2rem; }
+    .brand { gap: 6px; letter-spacing: 0; }
+    .status { padding: 4px 8px; font-size: .65rem; letter-spacing: 1px; gap: 5px; }
+    .ticker { font-size: .7rem; letter-spacing: 1px; }
+    .loading { letter-spacing: 2px; text-shadow: 2px 2px 0 var(--sat-dark); }
+    .meta { font-size: .6rem; letter-spacing: 1px; }
+  }
+
+  /* Tiny / feature-phone width (240-280px) */
+  @media (max-width: 280px) {
+    header { padding-left: 6px; padding-right: 6px; gap: 6px; }
+    .logo { width: 26px; height: 26px; font-size: 1rem; }
+    .status { padding: 3px 6px; font-size: .55rem; letter-spacing: 0; }
+    .status i { width: 6px; height: 6px; }
+    .loading { font-size: .95rem; letter-spacing: 1px; }
+    .meta { font-size: .5rem; letter-spacing: 0; }
+    footer { padding-left: 6px; padding-right: 6px; }
+  }
+
+  /* Large screens */
+  @media (min-width: 1200px) {
+    .ticker { font-size: .95rem; }
+  }
 </style>
 </head>
 <body>
@@ -280,9 +367,9 @@
   </main>
 
   <footer>
-    <div class="loading" aria-live="polite">Loading<span class="dot">.</span><span class="dot">.</span></div>
-    <div class="bar"><b></b></div>
-    <div class="meta">Syncing blocks &bull; &copy; BitQueenCo</div>
+    <div class="loading" id="loadingText" role="button" tabindex="0" aria-live="polite">Loading<span class="dot">.</span><span class="dot">.</span></div>
+    <div class="bar"><b id="barFill"></b></div>
+    <div class="meta" id="metaText">Syncing blocks &bull; &copy; BitQueenCo</div>
   </footer>
 
 <script>
@@ -315,9 +402,27 @@
 
   var target = "https://bitqueenco.blogspot.com";
   // Redirect after 6 seconds
-  setTimeout(function () {
+  var redirectTimer = setTimeout(function () {
     window.location.replace(target);
   }, 6000);
+
+  // Click / touch on "Loading" stops the redirect and loops the spin until browser refresh
+  var loadingText = document.getElementById('loadingText');
+  var paused = false;
+  function stopRedirect() {
+    if (paused) return;
+    paused = true;
+    clearTimeout(redirectTimer);
+    document.querySelector('.spinner').style.animationIterationCount = 'infinite';
+    document.getElementById('barFill').style.animationIterationCount = 'infinite';
+    document.getElementById('metaText').innerHTML = 'Redirect paused &bull; Refresh to restart';
+    loadingText.style.cursor = 'default';
+  }
+  loadingText.addEventListener('click', stopRedirect);
+  loadingText.addEventListener('touchstart', stopRedirect, { passive: true });
+  loadingText.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') stopRedirect();
+  });
 </script>
 </body>
 </html>
